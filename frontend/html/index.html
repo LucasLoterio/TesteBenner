@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estacionamento</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Sistema de Estacionamento</h1>
+        
+        <!-- Botões para abrir os modais -->
+        <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#entradaModal">
+            Registrar Entrada
+        </button>
+        <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#saidaModal">
+            Registrar Saída
+        </button>
+
+        <!-- Modal Registrar Entrada -->
+        <div class="modal fade" id="entradaModal" tabindex="-1" role="dialog" aria-labelledby="entradaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="entradaModalLabel">Registrar Entrada</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="entradaForm">
+                            <div class="form-group">
+                                <label for="entradaPlaca">Placa do Veículo:</label>
+                                <input type="text" id="entradaPlaca" name="placa" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="entradaHora">Hora de Entrada:</label>
+                                <input type="datetime-local" id="entradaHora" name="horaEntra" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Registrar Entrada</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Registrar Saída -->
+        <div class="modal fade" id="saidaModal" tabindex="-1" role="dialog" aria-labelledby="saidaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="saidaModalLabel">Registrar Saída</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="saidaForm">
+                            <div class="form-group">
+                                <label for="saidaPlaca">Placa do Veículo:</label>
+                                <input type="text" id="saidaPlaca" name="placa" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="saidaHora">Hora de Saída:</label>
+                                <input type="datetime-local" id="saidaHora" name="horaSaida" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Registrar Saída</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="my-4">Veículos Registrados</h2>
+        <table id="veiculosTable" class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Placa</th>
+                    <th>Hora de Entrada</th>
+                    <th>Hora de Saída</th>
+                    <th>Tempo Total</th>
+                    <th>Valor Total</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/script/script.js"></script>
+</body>
+</html>
